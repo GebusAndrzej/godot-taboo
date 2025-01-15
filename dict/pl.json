@@ -1,0 +1,332 @@
+[
+  {
+	"id": 1,
+	"word": "Samochód",
+	"forbiddenWords": ["Auto", "Pojazd", "Koła", "Kierowca", "Silnik"]
+  },
+  {
+	"id": 2,
+	"word": "Komputer",
+	"forbiddenWords": ["Laptop", "Monitor", "Klawiatura", "Mysz", "Internet"]
+  },
+  {
+	"id": 3,
+	"word": "Telefon",
+	"forbiddenWords": ["Komórka", "Rozmowa", "SMS", "Aparat", "Smartfon"]
+  },
+  {
+	"id": 4,
+	"word": "Pies",
+	"forbiddenWords": ["Szczeka", "Czworonóg", "Kot", "Obroża", "Hau"]
+  },
+  {
+	"id": 5,
+	"word": "Kawa",
+	"forbiddenWords": ["Napój", "Kubek", "Espresso", "Czarna", "Filiżanka"]
+  },
+  {
+	"id": 6,
+	"word": "Góry",
+	"forbiddenWords": ["Wspinaczka", "Szlak", "Tatry", "Szczyt", "Widok"]
+  },
+  {
+	"id": 7,
+	"word": "Rower",
+	"forbiddenWords": ["Jazda", "Kierownica", "Koła", "Przerzutki", "Kask"]
+  },
+  {
+	"id": 8,
+	"word": "Kot",
+	"forbiddenWords": ["Mruczy", "Pies", "Mysz", "Kły", "Wąsy"]
+  },
+  {
+	"id": 9,
+	"word": "Morze",
+	"forbiddenWords": ["Plaża", "Woda", "Fale", "Statek", "Piasek"]
+  },
+  {
+	"id": 10,
+	"word": "Lato",
+	"forbiddenWords": ["Wakacje", "Słońce", "Upał", "Plaża", "Klimat"]
+  },
+  {
+	"id": 11,
+	"word": "Zima",
+	"forbiddenWords": ["Śnieg", "Mróz", "Narty", "Sanie", "Bałwan"]
+  },
+  {
+	"id": 12,
+	"word": "Telewizor",
+	"forbiddenWords": ["Ekran", "Pilot", "Program", "Kino", "Filmy"]
+  },
+  {
+	"id": 13,
+	"word": "Pizza",
+	"forbiddenWords": ["Ser", "Ciasto", "Włochy", "Pomidory", "Zamówienie"]
+  },
+  {
+	"id": 14,
+	"word": "Czekolada",
+	"forbiddenWords": ["Słodycz", "Tabliczka", "Kakao", "Deser", "Brązowy"]
+  },
+  {
+	"id": 15,
+	"word": "Samolot",
+	"forbiddenWords": ["Lata", "Lotnisko", "Pilot", "Podróż", "Skrzydła"]
+  },
+  {
+	"id": 16,
+	"word": "Dom",
+	"forbiddenWords": ["Mieszkanie", "Budowa", "Okno", "Dach", "Rodzina"]
+  },
+  {
+	"id": 17,
+	"word": "Książka",
+	"forbiddenWords": ["Autor", "Strony", "Czyta", "Okładka", "Literatura"]
+  },
+  {
+	"id": 18,
+	"word": "Sowa",
+	"forbiddenWords": ["Ptak", "Mądrość", "Noc", "Las", "Uszy"]
+  },
+  {
+	"id": 19,
+	"word": "Rzeka",
+	"forbiddenWords": ["Woda", "Prąd", "Brzeg", "Most", "Płynie"]
+  },
+  {
+	"id": 20,
+	"word": "Gitara",
+	"forbiddenWords": ["Muzyka", "Struny", "Instrument", "Granie", "Akustyczna"]
+  },
+  {
+	"id": 21,
+	"word": "Okulary",
+	"forbiddenWords": ["Soczewki", "Wzrok", "Nos", "Oprawki", "Szkła"]
+  },
+  {
+	"id": 22,
+	"word": "Krzesło",
+	"forbiddenWords": ["Siedzenie", "Stół", "Mebel", "Nogi", "Oparcie"]
+  },
+  {
+	"id": 23,
+	"word": "Jabłko",
+	"forbiddenWords": ["Owoc", "Czerwone", "Sad", "Pestka", "Gruszka"]
+  },
+  {
+	"id": 24,
+	"word": "Samotność",
+	"forbiddenWords": ["Sam", "Cisza", "Pustka", "Brak", "Osamotnienie"]
+  },
+  {
+	"id": 25,
+	"word": "Mózg",
+	"forbiddenWords": ["Głowa", "Myślenie", "Organ", "Pamięć", "Neuron"]
+  },
+  {
+	"id": 26,
+	"word": "Wiosna",
+	"forbiddenWords": ["Kwiaty", "Zielono", "Pory roku", "Przyroda", "Słońce"]
+  },
+  {
+	"id": 27,
+	"word": "Ciasto",
+	"forbiddenWords": ["Pieczone", "Słodkie", "Tort", "Deser", "Kuchnia"]
+  },
+  {
+	"id": 28,
+	"word": "Taniec",
+	"forbiddenWords": ["Muzyka", "Ruch", "Kroki", "Bal", "Parkiet"]
+  },
+  {
+	"id": 29,
+	"word": "Radio",
+	"forbiddenWords": ["Muzyka", "Głos", "Stacja", "Słuchać", "Program"]
+  },
+  {
+	"id": 30,
+	"word": "Obraz",
+	"forbiddenWords": ["Malowanie", "Sztuka", "Galeria", "Kolory", "Płótno"]
+  },
+  {
+	"id": 31,
+	"word": "Herbata",
+	"forbiddenWords": ["Napój", "Liście", "Czajnik", "Kubek", "Cukier"]
+  },
+  {
+	"id": 32,
+	"word": "Koszula",
+	"forbiddenWords": ["Odzież", "Guziki", "Kołnierzyk", "Rękaw", "Marynarka"]
+  },
+  {
+	"id": 33,
+	"word": "Bilet",
+	"forbiddenWords": ["Wejście", "Kino", "Podróż", "Pociąg", "Samolot"]
+  },
+  {
+	"id": 34,
+	"word": "Sztuka",
+	"forbiddenWords": ["Malarstwo", "Teatr", "Artysta", "Kultura", "Ekspresja"]
+  },
+  {
+	"id": 35,
+	"word": "Fotografia",
+	"forbiddenWords": ["Zdjęcie", "Aparat", "Kamera", "Obraz", "Kadr"]
+  },
+  {
+	"id": 36,
+	"word": "Podróż",
+	"forbiddenWords": ["Wakacje", "Samolot", "Walizka", "Cel", "Wycieczka"]
+  },
+  {
+	"id": 37,
+	"word": "Ryba",
+	"forbiddenWords": ["Woda", "Łowienie", "Morze", "Ogon", "Płetwa"]
+  },
+  {
+	"id": 38,
+	"word": "Szpital",
+	"forbiddenWords": ["Lekarz", "Chory", "Pacjent", "Operacja", "Oddział"]
+  },
+  {
+	"id": 39,
+	"word": "Miasto",
+	"forbiddenWords": ["Ulice", "Bloki", "Ludzie", "Samochody", "Ruch"]
+  },
+  {
+	"id": 40,
+	"word": "Motyl",
+	"forbiddenWords": ["Owady", "Skrzydła", "Kolory", "Kwiaty", "Lata"]
+  },
+  {
+	"id": 41,
+	"word": "Słońce",
+	"forbiddenWords": ["Światło", "Gwiazda", "Dzień", "Niebo", "Ciepło"]
+  },
+  {
+	"id": 42,
+	"word": "Las",
+	"forbiddenWords": ["Drzewa", "Zwierzetęta", "Przyroda", "Liście", "Szlak"]
+  },
+  {
+	"id": 43,
+	"word": "Drzwi",
+	"forbiddenWords": ["Wejście", "Klucz", "Zamek", "Otwiera", "Zamyka"]
+  },
+  {
+	"id": 44,
+	"word": "Zegar",
+	"forbiddenWords": ["Godzina", "Minuty", "Tarcza", "Czas", "Wskazówki"]
+  },
+  {
+	"id": 45,
+	"word": "Kosmos",
+	"forbiddenWords": ["Planety", "Gwiazdy", "Przestrzeń", "Rakieta", "Galaktyka"]
+  },
+  {
+	"id": 46,
+	"word": "Mleko",
+	"forbiddenWords": ["Krowa", "Napój", "Białe", "Karton", "Pij"]
+  },
+  {
+	"id": 47,
+	"word": "Zamek",
+	"forbiddenWords": ["Król", "Budowla", "Brama", "Forteca", "Baszta"]
+  },
+  {
+	"id": 48,
+	"word": "Pociąg",
+	"forbiddenWords": ["Tory", "Kolej", "Stacja", "Wagony", "Lokomotywa"]
+  },
+  {
+	"id": 49,
+	"word": "Papier",
+	"forbiddenWords": ["Arkusz", "Druk", "Kartka", "Pisać", "Biuro"]
+  },
+  {
+	"id": 50,
+	"word": "Szkoła",
+	"forbiddenWords": ["Nauka", "Uczeń", "Klasa", "Nauczyciel", "Zajęcia"]
+  },
+  {
+	"id": 51,
+	"word": "Piłka",
+	"forbiddenWords": ["Gra", "Sport", "Boisko", "Noga", "Kopanie"]
+  },
+  {
+	"id": 52,
+	"word": "Talerz",
+	"forbiddenWords": ["Jedzenie", "Stół", "Zastawa", "Obiad", "Porcelana"]
+  },
+  {
+	"id": 53,
+	"word": "Basen",
+	"forbiddenWords": ["Woda", "Pływanie", "Kąpiel", "Ratownik", "Sport"]
+  },
+  {
+	"id": 54,
+	"word": "Fotel",
+	"forbiddenWords": ["Mebel", "Siedzenie", "Salon", "Komfort", "Podłokietnik"]
+  },
+  {
+	"id": 55,
+	"word": "Kawałek",
+	"forbiddenWords": ["Część", "Fragment", "Całość", "Odciąć", "Podzielić"]
+  },
+  {
+	"id": 56,
+	"word": "Torba",
+	"forbiddenWords": ["Pakowanie", "Zakupy", "Noszenie", "Ręka", "Bagaż"]
+  },
+  {
+	"id": 57,
+	"word": "Księżyc",
+	"forbiddenWords": ["Noc", "Niebo", "Pełnia", "Planeta", "Gwiazdy"]
+  },
+  {
+	"id": 58,
+	"word": "Sukienka",
+	"forbiddenWords": ["Odzież", "Kobieta", "Ubranie", "Moda", "Kolor"]
+  },
+  {
+	"id": 59,
+	"word": "Chleb",
+	"forbiddenWords": ["Bułka", "Pieczywo", "Ziarna", "Kanapka", "Pieczywo"]
+  },
+  {
+	"id": 60,
+	"word": "Narty",
+	"forbiddenWords": ["Śnieg", "Zima", "Stok", "Sport", "Buty"]
+  },
+  {
+	"id": 61,
+	"word": "Muzyka",
+	"forbiddenWords": ["Dźwięk", "Instrument", "Piosenka", "Melodia", "Rytm"]
+  },
+  {
+	"id": 62,
+	"word": "Liście",
+	"forbiddenWords": ["Drzewo", "Jesień", "Gałęzie", "Zielony", "Spadać"]
+  },
+  {
+	"id": 63,
+	"word": "Poduszka",
+	"forbiddenWords": ["Sen", "Łóżko", "Miękka", "Poszewka", "Wypoczynek"]
+  },
+  {
+	"id": 64,
+	"word": "Most",
+	"forbiddenWords": ["Rzeka", "Przejście", "Pojazdy", "Łączy", "Budowla"]
+  },
+  {
+	"id": 65,
+	"word": "Szachy",
+	"forbiddenWords": ["Gra", "Plansza", "Figury", "Strategia", "Król"]
+  },
+  {
+	"id": 66,
+	"word": "Skarpetki",
+	"forbiddenWords": ["Stopa", "Buty", "Para", "Odzież", "Bawełna"]
+  }
+]

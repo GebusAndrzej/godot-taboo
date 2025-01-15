@@ -1,0 +1,110 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0tnb7aeat73w"]
+
+[ext_resource type="Script" path="res://hud/game.gd" id="1_x15u3"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x15u3")
+
+[node name="Game label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 405.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 72
+text = "Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="ElapsedTimeLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -28.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "90"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="ElapsedTime" type="Timer" parent="."]
+wait_time = 15.0
+
+[node name="SuccessButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 211.0
+offset_top = -15.5
+offset_bottom = 83.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dobrze"
+metadata/_edit_group_ = true
+
+[node name="IgnoreButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_right = -203.0
+offset_bottom = 83.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dalej
+"
+metadata/_edit_group_ = true
+
+[node name="NextRound" type="Button" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 586.0
+offset_right = 335.0
+offset_bottom = 681.0
+text = "Następna drużyna"
+metadata/_edit_group_ = true
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = -201.5
+offset_right = 89.0
+offset_bottom = -59.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score"
+metadata/_edit_group_ = true
+
+[node name="LbState" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 127.0
+offset_right = 173.0
+offset_bottom = 150.0
+text = "State"
+metadata/_edit_group_ = true
+
+[connection signal="timeout" from="ElapsedTime" to="." method="_on_elapsed_time_timeout"]
+[connection signal="pressed" from="SuccessButton" to="." method="_on_success_button_pressed"]
+[connection signal="pressed" from="NextRound" to="." method="_on_next_round_pressed"]
