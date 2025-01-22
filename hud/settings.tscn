@@ -1,0 +1,163 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjihq0vp4djgs"]
+
+[ext_resource type="Script" path="res://hud/settings.gd" id="1_uxia6"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uxia6")
+
+[node name="LbSettings" type="Label" parent="."]
+layout_mode = 0
+offset_left = 97.0
+offset_right = 413.0
+offset_bottom = 106.0
+text = "Ustawienia"
+metadata/_edit_group_ = true
+
+[node name="BtBack" type="Button" parent="."]
+layout_mode = 0
+offset_right = 92.0
+offset_bottom = 73.0
+text = "<-"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 11.0
+offset_top = -247.5
+offset_right = -10.0
+offset_bottom = 129.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Round Time" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="LbRound" type="Label" parent="VBoxContainer/Round Time"]
+layout_mode = 1
+offset_right = 149.0
+offset_bottom = 23.0
+text = "Czas trwania rundy"
+
+[node name="RoundLengthSlider" type="HSlider" parent="VBoxContainer/Round Time"]
+custom_minimum_size = Vector2(200, 0)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+tooltip_text = "Teams"
+min_value = 5.0
+max_value = 300.0
+step = 5.0
+value = 60.0
+
+[node name="LbRoundLengthValue" type="Label" parent="VBoxContainer/Round Time"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "0"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Round Number" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="LbRoundsNumber" type="Label" parent="VBoxContainer/Round Number"]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Ilośc rund"
+
+[node name="LbRoundsNumberValue" type="Label" parent="VBoxContainer/Round Number"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "0"
+horizontal_alignment = 2
+
+[node name="RoundNumberSlider" type="HSlider" parent="VBoxContainer/Round Number"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Teams" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="LbTeams" type="Label" parent="VBoxContainer/Teams"]
+layout_mode = 1
+offset_right = 112.0
+offset_bottom = 23.0
+text = "Ilość drużyn"
+
+[node name="TeamCountSlider" type="HSlider" parent="VBoxContainer/Teams"]
+custom_minimum_size = Vector2(200, 0)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+tooltip_text = "Teams"
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+
+[node name="LbTeamsValue" type="Label" parent="VBoxContainer/Teams"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -43.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "0"
+horizontal_alignment = 2
+
+[connection signal="pressed" from="BtBack" to="." method="_on_bt_back_pressed"]
+[connection signal="value_changed" from="VBoxContainer/Round Time/RoundLengthSlider" to="." method="_on_round_length_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Round Number/RoundNumberSlider" to="." method="_on_round_number_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Teams/TeamCountSlider" to="." method="_on_team_count_slider_value_changed"]
