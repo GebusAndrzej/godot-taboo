@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0tnb7aeat73w"]
+[gd_scene load_steps=3 format=3 uid="uid://b0tnb7aeat73w"]
 
 [ext_resource type="Script" path="res://hud/game.gd" id="1_x15u3"]
+[ext_resource type="Theme" uid="uid://dhlnhhyf24mwu" path="res://theme/DefaultTheme.tres" id="2_y7hyl"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -11,74 +12,54 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x15u3")
 
-[node name="Game label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 130.0
-offset_top = -23.0
-offset_right = 405.0
-offset_bottom = 76.0
-theme_override_font_sizes/font_size = 72
-text = "Game"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_group_ = true
-
-[node name="ElapsedTimeLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -28.0
-offset_right = 20.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 20
-text = "90"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_group_ = true
-
 [node name="ElapsedTime" type="Timer" parent="."]
 wait_time = 15.0
 
 [node name="SuccessButton" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = -1
+anchor_left = 0.512
+anchor_top = 0.854645
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 211.0
-offset_top = 154.5
-offset_bottom = 253.5
+anchor_bottom = 1.0
+offset_left = 0.0559845
+offset_top = -23.0
+offset_bottom = -57.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_y7hyl")
 text = "Dobrze"
 metadata/_edit_group_ = true
 
-[node name="IgnoreButton" type="Button" parent="."]
+[node name="SkipWordButton" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = 154.5
-offset_right = -203.0
-offset_bottom = 253.5
+anchors_preset = -1
+anchor_top = 0.856
+anchor_right = 0.507282
+anchor_bottom = 1.0
+offset_top = -24.2401
+offset_bottom = -57.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Dalej
-"
+theme = ExtResource("2_y7hyl")
+theme_type_variation = &"RedButton"
+text = "Pomiń"
 metadata/_edit_group_ = true
 
 [node name="NextRound" type="Button" parent="."]
-layout_mode = 0
-offset_left = 96.0
-offset_top = 756.0
-offset_right = 335.0
-offset_bottom = 851.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112
+anchor_top = 1.0
+anchor_right = 0.888
+anchor_bottom = 1.0
+offset_left = -0.144001
+offset_top = -186.0
+offset_right = 0.143982
+offset_bottom = -111.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_y7hyl")
 text = "Start"
 metadata/_edit_group_ = true
 
@@ -100,10 +81,10 @@ metadata/_edit_group_ = true
 
 [node name="LbState" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 71.0
-offset_right = 173.0
-offset_bottom = 94.0
+offset_left = 2.0
+offset_top = 62.0
+offset_right = 174.0
+offset_bottom = 152.0
 text = "State"
 metadata/_edit_group_ = true
 
@@ -117,21 +98,73 @@ anchor_bottom = 0.5
 offset_left = -122.0
 offset_top = -148.5
 offset_right = 123.0
-offset_bottom = 11.5
+offset_bottom = -97.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 30
 text = "Word
 "
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="LbForbiddenWords" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -99.5
+offset_right = 123.0
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Forbidden words"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="BtBack" type="Button" parent="."]
-layout_mode = 0
-offset_right = 120.0
-offset_bottom = 68.0
-text = "<-"
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_bottom = 60.0
+grow_horizontal = 0
+theme = ExtResource("2_y7hyl")
+theme_type_variation = &"BackButton"
+
+[node name="RoundTimeProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_right = 0.762
+offset_left = -0.0559998
+offset_top = 20.0
+offset_right = 0.0559998
+offset_bottom = 51.0
+grow_horizontal = 2
+value = 50.0
+show_percentage = false
+
+[node name="TimeLeft" type="Label" parent="RoundTimeProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.5
+offset_right = 20.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="timeout" from="ElapsedTime" to="." method="_on_elapsed_time_timeout"]
 [connection signal="pressed" from="SuccessButton" to="." method="_on_success_button_pressed"]
+[connection signal="pressed" from="SkipWordButton" to="." method="_on_ignore_button_pressed"]
 [connection signal="pressed" from="NextRound" to="." method="_on_next_round_pressed"]
 [connection signal="pressed" from="BtBack" to="." method="_on_bt_back_pressed"]

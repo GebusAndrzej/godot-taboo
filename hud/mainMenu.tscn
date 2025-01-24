@@ -1,35 +1,65 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxvqvoelffmyn"]
+[gd_scene load_steps=4 format=3 uid="uid://cxvqvoelffmyn"]
 
 [ext_resource type="Script" path="res://hud/main_menu.gd" id="1_fhnqg"]
+[ext_resource type="Theme" uid="uid://dhlnhhyf24mwu" path="res://theme/DefaultTheme.tres" id="2_8xadk"]
+[ext_resource type="FontFile" uid="uid://duoo01xa3sqy8" path="res://assets/fonts/SpaceGrotesk-Bold.ttf" id="2_u3p5y"]
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
 script = ExtResource("1_fhnqg")
 
 [node name="Label" type="Label" parent="."]
-offset_top = 87.0
-offset_right = 413.0
-offset_bottom = 186.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -206.5
+offset_top = 46.0
+offset_right = 206.5
+offset_bottom = 145.0
+grow_horizontal = 2
 size_flags_horizontal = 0
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.933333, 0.909804, 0.662745, 1)
+theme_override_fonts/font = ExtResource("2_u3p5y")
 theme_override_font_sizes/font_size = 72
 text = "Taboo"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_group_ = true
 
-[node name="BtStartGame" type="Button" parent="."]
-offset_left = 99.0
-offset_top = 355.0
-offset_right = 318.0
-offset_bottom = 431.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14
+anchor_top = 0.5
+anchor_right = 0.86
+anchor_bottom = 0.5
+offset_left = -0.18
+offset_top = -82.5
+offset_right = 0.179993
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="BtStartGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_8xadk")
 text = "Graj"
+metadata/_edit_group_ = true
 
-[node name="BtSettings" type="Button" parent="."]
-offset_left = 99.0
-offset_top = 460.0
-offset_right = 318.0
-offset_bottom = 536.0
+[node name="BtSettings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_8xadk")
 text = "Ustawienia"
+metadata/_edit_group_ = true
 
-[connection signal="pressed" from="BtStartGame" to="." method="_on_bt_start_game_pressed"]
-[connection signal="pressed" from="BtSettings" to="." method="_on_bt_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtStartGame" to="." method="_on_bt_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtSettings" to="." method="_on_bt_settings_pressed"]

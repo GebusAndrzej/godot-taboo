@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjihq0vp4djgs"]
+[gd_scene load_steps=5 format=3 uid="uid://cjihq0vp4djgs"]
 
 [ext_resource type="Script" path="res://hud/settings.gd" id="1_uxia6"]
+[ext_resource type="Theme" uid="uid://dhlnhhyf24mwu" path="res://theme/DefaultTheme.tres" id="2_4a247"]
+[ext_resource type="Texture2D" uid="uid://co1ib4m171npv" path="res://assets/ui/icons/Gear.png" id="3_cghuw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sy5db"]
+texture = ExtResource("3_cghuw")
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -11,29 +16,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uxia6")
 
-[node name="LbSettings" type="Label" parent="."]
-layout_mode = 0
-offset_left = 97.0
-offset_right = 413.0
-offset_bottom = 106.0
-text = "Ustawienia"
-metadata/_edit_group_ = true
-
 [node name="BtBack" type="Button" parent="."]
-layout_mode = 0
-offset_right = 92.0
-offset_bottom = 73.0
-text = "<-"
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_bottom = 60.0
+grow_horizontal = 0
+theme = ExtResource("2_4a247")
+theme_type_variation = &"BackButton"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 14
+anchors_preset = -1
+anchor_left = 0.027
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.976
 anchor_bottom = 0.5
-offset_left = 11.0
+offset_left = -0.124001
 offset_top = -247.5
-offset_right = -10.0
+offset_right = -0.11203
 offset_bottom = 129.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -157,7 +160,57 @@ grow_horizontal = 0
 text = "0"
 horizontal_alignment = 2
 
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Max Skip Count" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="LbSkipCount" type="Label" parent="VBoxContainer/Max Skip Count"]
+layout_mode = 1
+offset_right = 112.0
+offset_bottom = 23.0
+text = "Ilość Pominięć"
+
+[node name="SkipCountSlider" type="HSlider" parent="VBoxContainer/Max Skip Count"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+tooltip_text = "Teams"
+max_value = 11.0
+value = 1.0
+
+[node name="LbSkipCountValue" type="Label" parent="VBoxContainer/Max Skip Count"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -160.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "0"
+horizontal_alignment = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_sy5db")
+
 [connection signal="pressed" from="BtBack" to="." method="_on_bt_back_pressed"]
 [connection signal="value_changed" from="VBoxContainer/Round Time/RoundLengthSlider" to="." method="_on_round_length_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/Round Number/RoundNumberSlider" to="." method="_on_round_number_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/Teams/TeamCountSlider" to="." method="_on_team_count_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Max Skip Count/SkipCountSlider" to="." method="_on_skip_count_slider_value_changed"]

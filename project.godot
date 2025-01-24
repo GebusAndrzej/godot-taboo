@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Taboo"
+config/version="1.0.0"
 run/main_scene="res://hud/mainMenu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
@@ -26,8 +27,18 @@ GameState="*res://scripts/gameState.gd"
 window/size/viewport_width=412
 window/size/viewport_height=915
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 window/handheld/orientation=1
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
+
+[gui]
+
+theme/custom="res://theme/DefaultTheme.tres"
 
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.247059, 0.278431, 0.337255, 1)

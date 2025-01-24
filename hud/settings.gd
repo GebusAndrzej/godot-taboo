@@ -12,6 +12,8 @@ func time_convert(time_in_sec):
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	%SkipCountSlider.max_value = Global.skipNumberInfinite;
+	%SkipCountSlider.value = GameState.maxSkipCount;
 	$VBoxContainer/Teams/TeamCountSlider.value = GameState.teams;
 	$"VBoxContainer/Round Time/RoundLengthSlider".value = GameState.roundTime;
 	$"VBoxContainer/Round Number/RoundNumberSlider".value = GameState.rounds;
@@ -21,6 +23,7 @@ func _process(delta: float) -> void:
 	$VBoxContainer/Teams/LbTeamsValue.text = str(GameState.teams);
 	$"VBoxContainer/Round Time/LbRoundLengthValue".text = str(time_convert(GameState.roundTime));
 	$"VBoxContainer/Round Number/LbRoundsNumberValue".text = str(GameState.rounds);
+	%LbSkipCountValue.text = str(GameState.maxSkipCount if GameState.maxSkipCount != Global.skipNumberInfinite else "Bez limitu");
 
 func _on_team_count_slider_value_changed(value: float) -> void:
 	GameState.setTeamNo(int(value));
@@ -30,3 +33,6 @@ func _on_round_length_slider_value_changed(value: float) -> void:
 
 func _on_round_number_slider_value_changed(value: float) -> void:
 	GameState.rounds = int(value);
+
+func _on_skip_count_slider_value_changed(value: float) -> void:
+	GameState.maxSkipCount = int(value);

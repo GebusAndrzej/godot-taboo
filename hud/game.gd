@@ -21,20 +21,22 @@ func getScore() -> String:
 func round_start() -> void:
 	$NextRound.hide();
 	$ElapsedTime.start();
-	$ElapsedTimeLabel.show();
 	$SuccessButton.show();
-	$IgnoreButton.show();
+	$SkipWordButton.show();
 	$ScoreLabel.hide();
 	$LbWord.show();
+	$LbForbiddenWords.show();
+	%RoundTimeProgressBar.show();
 	state = 1;
 	
 func round_stop() -> void:
 	$ElapsedTime.stop();
-	$ElapsedTimeLabel.hide();
 	$SuccessButton.hide();
-	$IgnoreButton.hide();
+	$SkipWordButton.hide();
 	$ScoreLabel.show();
 	$LbWord.hide();
+	$LbForbiddenWords.hide();
+	%RoundTimeProgressBar.hide();
 	state = 0;
 	nextWord();
 	
@@ -66,20 +68,34 @@ func nextWord() -> int:
 func _ready() -> void:
 	prepareCards();
 	GameState.resetScore();
+	GameState.resetSkips();
 	$ElapsedTime.wait_time = GameState.roundTime;
 	round_stop();
 	$ScoreLabel.hide();
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$ElapsedTimeLabel.text = str($ElapsedTime.time_left);
+#	Set ui left time
+	%RoundTimeProgressBar.value = ($ElapsedTime.time_left / GameState.roundTime) * 100;
+	$RoundTimeProgressBar/TimeLeft.text = str(Global.time_convert(int($ElapsedTime.time_left)));
+	
 	$LbState.text = str("Runda: ",roundNo, " / ", GameState.rounds,"\n", "Team: ", team, " / ", GameState.teams);
+	
+	if GameState.maxSkipCount != Global.skipNumberInfinite and GameState.teamSkips[team] >= GameState.maxSkipCount:
+		$SkipWordButton.disabled = true;
+	else:
+		$SkipWordButton.disabled = false;
+	
 	if state == 1:
-		$LbWord.text = str(
-			Global.words[wordNo].word,
-			"\n", 
-			"\n".join(Global.words[wordNo].forbiddenWords)
-		);
+#		Set the words in card
+		$LbWord.text = str(Global.words[wordNo].word);
+		$LbForbiddenWords.text = str("\n".join(Global.words[wordNo].forbiddenWords))
+		
+#		Set skip button state
+		$SkipWordButton.text = str(
+			"Pomiń",
+			str(" (", GameState.maxSkipCount - GameState.teamSkips[team], ")") if GameState.maxSkipCount != Global.skipNumberInfinite else ""
+		)
 
 # listeners
 func _on_elapsed_time_timeout() -> void:
@@ -92,5 +108,9 @@ func _on_success_button_pressed() -> void:
 	GameState.teamScore[team] = GameState.teamScore.get(team, 0) + 1;
 	nextWord();
 
+func _on_ignore_button_pressed() -> void:
+	GameState.teamSkips[team] = GameState.teamSkips.get(team, 0) + 1;
+	nextWord();
+	
 func _on_bt_back_pressed() -> void:
 	SceneManager.change_scene2("MainMenu");

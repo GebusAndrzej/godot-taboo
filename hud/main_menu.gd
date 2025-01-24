@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 # Called when the node enters the scene tree for the first time.
 #func _ready() -> void:
@@ -9,7 +9,6 @@ extends Node2D
 	#pass
 
 func _on_bt_settings_pressed() -> void:
-	#SceneManager.change_scene("res://hud/settings.tscn")
 	SceneManager.change_scene2("res://hud/settings.tscn")
 
 func _on_bt_start_game_pressed() -> void:
